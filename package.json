@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "serve": "live-server public/",
-    "build": "webpack",
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
@@ -18,15 +20,19 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
+    "extract-text-webpack-plugin": "4.0.0-alpha.0",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^23.1.0",
     "live-server": "^1.2.0",
     "moment": "2.18.1",
     "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
+    "path": "^0.12.7",
     "raf": "3.3.2",
     "react": "^16.3.2",
     "react-addons-shallow-compare": "15.6.0",
@@ -42,9 +48,10 @@
     "uuid": "^3.2.1",
     "validator": "^10.2.0",
     "webpack": "^4.8.3",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.1.4",
+    "webpack-merge": "^4.1.2"
   },
   "devDependencies": {
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^3.0.3"
   }
 }
