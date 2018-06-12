@@ -3,7 +3,7 @@
 exports[`should render ExpensesSummary correctly a single expense 1`] = `
 <div>
   <p>
-    Viewing 1 expenses totalling $75.00
+    Viewing 1 expense totalling $75.00
   </p>
 </div>
 `;

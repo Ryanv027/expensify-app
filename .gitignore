@@ -397,3 +397,6 @@ ASALocalRun/
 .mfractor/
 
 public/dist/
+
+.env.development
+.env.test
