@@ -9,22 +9,33 @@ export class EditExpensePage extends React.Component {
     this.props.history.push('/');
   };
   onRemove = () => {
-    const id = this.props.expense.id
-    this.props.startRemoveExpense(id);
-    this.props.history.push('/');
+    const confirmation = confirm('Are you sure you want to delete this expense?');
+    if(confirmation === true){
+      const id = this.props.expense.id;
+      this.props.startRemoveExpense(id);
+      this.props.history.push('/');
+    } else return false;
   };
   render(){
     return (
       <div>
+        <div className='page-header'>
+          <div className='content-container'>
+            <h1 className='page-header__title'>Edit Expense</h1>
+          </div>
+        </div>
+        <div className='content-container'>
           <ExpenseForm 
-            expense={this.props.expense}
-            onSubmit={this.onSubmit}
+          onSubmit={this.onSubmit}
+          expense={this.props.expense}
           />
           <button
+            className='button button--remove'
             onClick={this.onRemove}
-            >Remove
-        </button>
+            >Remove Expense
+          </button>
         </div>
+      </div>
     )
   };
 };
